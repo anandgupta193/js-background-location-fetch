@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <title>GPS Tracker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+  <meta name="theme-color" content="black">
+  <link rel="manifest" href="manifest.json">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,6 +24,27 @@
 <pre><code id="log"></code></pre>
 
 <script src="track.js"></script>
+
+<script>
+
+  // Register the Service Worker
+  async function registerSW() {
+    if ('serviceWorker' in navigator) {
+      try {
+        await navigator
+              .serviceWorker
+              .register('serviceworker.js');
+      }
+      catch (e) {
+        console.log('SW registration failed');
+      }
+    }
+  }
+
+  window.addEventListener('load', () => {
+    registerSW();
+  });
+</script>
 
 </body>
 
