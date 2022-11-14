@@ -1,5 +1,6 @@
 {
     "name":"LocTrack",
+    "id": "index.html",
     "short_name":"Loc",
     "start_url":"index.html",
     "display":"standalone",
