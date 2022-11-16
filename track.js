@@ -24,9 +24,8 @@ function startTrack() {
   currentData = {};
   trackingIntervalId = window.setInterval(() => {
     collectEntry();
-    console.log('##############', currentData)
     log.innerText = JSON.stringify(currentData.coords);
-  }, 3000);
+  }, 2000);
   
   isTracking = true;
 }
